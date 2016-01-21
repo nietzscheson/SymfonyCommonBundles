@@ -7,3 +7,4 @@ This Symfony project include the following bundles:
 
 - AssetBundle
 - FOSUserBundle
+- SonataAdminBundle
