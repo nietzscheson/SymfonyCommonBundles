@@ -28,6 +28,7 @@
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/datagrid-bundle": "~2.2@dev",
+        "sonata-project/user-bundle": "dev-master",
         "sonata-project/intl-bundle": "^2.2",
         "knplabs/knp-menu-bundle": "dev-master",
         "knplabs/knp-paginator-bundle": "2.4.*@dev"

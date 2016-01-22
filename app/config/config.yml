@@ -60,6 +60,9 @@ doctrine:
         #   3. Uncomment next line:
         #     path:     "%database_path%"
 
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
@@ -70,12 +73,33 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
 
+    service:
+        user_manager: sonata.user.orm.user_manager
+
+    group:
+        group_class:   AppBundle\Entity\UserGroup
+        group_manager: sonata.user.orm.group_manager
+
 sonata_block:
     default_contexts: [cms]
     blocks:
         # enable the SonataAdminBundle block
+        sonata.user.block.menu:
+        sonata.block.service.text:
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+sonata_user:
+    class:
+        user: AppBundle\Entity\User
+        group: AppBundle\Entity\UserGroup
+
+    security_acl: false
+
+    table:
+        user_group: fos_user_user_group
+
+    manager_type: orm
 
 # Swiftmailer Configuration
 swiftmailer:
